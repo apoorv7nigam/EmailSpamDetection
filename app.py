@@ -143,12 +143,11 @@ def main():
     else:
         domain = "Unknown"
 
-    # domain_map = {
-    #     "outlook.com":0,
-    #     "yahoo.com":1,
-    #     "gmail.com":2,
-    #     "company.com":3
-    # }
+    if domain not in domain_map:
+        st.info(
+            f"ℹ️ The domain '{domain}' is not included in the training dataset. "
+            "It has been mapped to 'Unknown' for prediction."
+        )
 
     p7 = domain_map.get(domain,4)
 
